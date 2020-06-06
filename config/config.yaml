@@ -1,0 +1,26 @@
+path:
+  dataPath: config/config.yaml
+  resultPath: results/
+
+general:
+  use_cuda: Yes
+  seed: 0
+  targetTrainingSize: 4500 # chooce from 0 to 4500
+  targetTestSize: 900
+  number_shadow_model: 10 # be equal to the number of categories
+  
+evaluate:
+  top: 0                  # Set how many smallest probabilities to be 0 in the prediction vector
+  overlapRate: 0.0
+
+learning:
+  model:  ResNet          #CNN3 #CNN2
+  batchSize: 64
+  learningRate: 0.0001    # 0.0001 For RestNet
+  momentum: 0.5
+  epochs: 120             # 120 for ResNet
+  decreaseFactor: 0.9     # the learning rate will times this factor every step size
+  decreaseStepSize: 30
+  LGBM:                   # paramters of the light gradient boost machine 
+    reg_lambda: 10
+    n_estimators: 10000

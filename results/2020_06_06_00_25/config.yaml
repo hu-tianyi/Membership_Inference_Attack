@@ -1,0 +1,26 @@
+path:
+  dataPath: config/config.yaml
+  resultPath: results/
+
+general:
+  use_cuda: Yes
+  seed: 0
+  targetTrainingSize: 4500 # 2 500, 5 000, 10 000, 15 000 // 4 600, 10 520, 19 920, 29 540
+  targetTestSize: 900
+  number_shadow_model: 10 # 25 50 MNIST ou 100 cifar
+  
+evaluate:
+  top: 5  # restrict top X probabilities avaliable in the prediction vector
+  overlapRate: 0.0
+
+learning:
+  model:  ResNet #CNN3 #CNN2
+  batchSize: 64
+  learningRate: 0.0001 #0.0001 #CNN3 0.0005 # 0.001 # 0.0001 For RestNet
+  momentum: 0.5
+  epochs: 120 # 100 for CNN2 # 50 for CNN3 # 100 for ResNet
+  decreaseFactor: 0.9 #0.001 # 0.0000001 # 0.0001 For Restnet
+  decreaseStepSize: 30
+  LGBM:
+    reg_lambda: 10
+    n_estimators: 10000
