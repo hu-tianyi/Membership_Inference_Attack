@@ -14,3 +14,4 @@ Implement [black-box membership inference attack](https://arxiv.org/abs/1610.058
 8. itertools
 
 ### Configuration
+Set up the configuration by modifing the file "config.yaml" under /config folder. You need to restart the kernel in Jupyter to update the configuration. 
